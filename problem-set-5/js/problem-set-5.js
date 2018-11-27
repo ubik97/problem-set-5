@@ -26,13 +26,7 @@ function mario() {
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
-  let input = prompt("Enter an integer between 1 and 23");
-  height = input;
 
-  for (height; height>1; height--;) {
-    let a = 1;
-    print ("#" + (a*"#"))
-  }
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
@@ -196,9 +190,38 @@ function hurricane() {
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
 
+  windspeed = prompt("Enter a non negative integer");
+
+  if ((windspeed%1!=0)||(windspeed<0)) {
+    while ((windspeed%1!=0)||(windspeed<0)) {
+    windspeed = prompt("I said, enter a non negative integer");
+    }
+  }
+
+  let result;
+
+  if (39<=windspeed<=73) {
+    result = "Tropical Storm.";
+  } else if (windspeed>=39 && windspeed<=73) {
+    result = "Category 1.";
+  } else if (96<=windspeed<=110) {
+    result = "Category 2.";
+  } else if (111<=windspeed<=129) {
+    result = "Category 3.";
+  } else if (130<=windspeed<=156) {
+    result = "Category 4.";
+  } else if (windspeed>=157) {
+    result = "Category 5.";
+  }
+
+  var p = document.getElementById("hurricane-output")
+  p.innerHTML = result;
+
+
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
-  ///////////////////////////////// DO NOT MODIFY
+  ///////////////////////////////// DO NOT MODIF
+
 }
 
 /*
