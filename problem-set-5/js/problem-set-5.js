@@ -153,7 +153,28 @@ function credit() {
 
 function guess() {
 
-  // WRITE YOUR EXERCISE 4 CODE HERE
+  var a = document.getElementById("guess-output");
+  let num = Math.floor((Math.random()*1000) + 1);
+  let guess = prompt("Guess my number!");
+  let gtrack = 1;
+
+  if (num!=guess) {
+    while (num!=guess) {
+      if (num>guess) {
+        guess = prompt("Too low! Guess again");
+      }
+      if (num<guess) {
+        guess = prompt("Too high! Guess again")
+      }
+      gtrack++;
+    }
+    }
+
+  if (num=guess) {
+    a.innerHTML = "Correct! My number was " + num + "." + " Attempts: " + gtrack;
+  }
+
+
 
   ////////////////// DO NOT MODIFY
   check('guess'); // DO NOT MODIFY
