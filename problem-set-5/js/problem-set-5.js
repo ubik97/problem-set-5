@@ -198,20 +198,23 @@ function hurricane() {
     }
   }
 
+  windspeed = parseInt(windspeed, 10);
   let result;
 
-  if (39<=windspeed<=73) {
-    result = "Tropical Storm.";
-  } else if (windspeed>=39 && windspeed<=73) {
-    result = "Category 1.";
-  } else if (96<=windspeed<=110) {
-    result = "Category 2.";
-  } else if (111<=windspeed<=129) {
-    result = "Category 3.";
-  } else if (130<=windspeed<=156) {
+  if (windspeed>=157) {
+    result = "Category 5 Hurricane.";
+  } else if (windspeed>=130 && windspeed<157) {
     result = "Category 4.";
-  } else if (windspeed>=157) {
-    result = "Category 5.";
+  } else if (windspeed>=111 && windspeed<130) {
+    result = "Category 3 Hurricane.";
+  } else if (windspeed>=96 && windspeed<111) {
+    result = "Category 2 Hurricane.";
+  } else if (windspeed>=74 && windspeed<96) {
+    result = "Category 1 Hurricane.";
+  } else if (windspeed>=39 && windspeed<74) {
+    result = "Tropical Storm.";
+  } else if (windspeed<=38) {
+    result = "The skies are calm...";
   }
 
   var p = document.getElementById("hurricane-output")
