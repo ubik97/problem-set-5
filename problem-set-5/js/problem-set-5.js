@@ -314,11 +314,14 @@ function gymnastics() {
 
 function reportCard() {
 
+  let tscore = prompt("Enter all of your test scores. When you're finished, enter -1.")
+
   ///////////////////////// DO NOT MODIFY
   let testTotal = 0; ////// DO NOT MODIFY
   let quizTotal = 0; ////// DO NOT MODIFY
   let homeworkTotal = 0; // DO NOT MODIFY
   ///////////////////////// DO NOT MODIFY
+
 
   /*
    * NOTE: The 'testTotal', 'quizTotal', and 'homeworkTotal' variables
