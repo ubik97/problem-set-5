@@ -25,29 +25,7 @@ function mario() {
   ////////////// DO NOT MODIFY
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
-  let hash = '#';
-  let space = ' ';
-  let lines = '';
-  while(true) {
-    height = Number(prompt("Enter An Integer Between 1 And 23"));
-    if(height >= 1 && height <= 23 && Number.isInteger(height)) {
-      for(let i=0; i<height; i++) {
 
-        for(let j=0; j<=(height-2-i);j++) {
-          lines = lines + space;
-        }
-
-        for(let k=0; k<=(1+i);k++) {
-          lines = lines + hash;
-        }
-
-        lines = lines + "<br>";
-      }
-      document.getElementById("mario-easy-output").innerHTML="<code>"+lines+"</code>";
-      break;
-    }
-
-  }
 
 
 
@@ -315,7 +293,7 @@ function gymnastics() {
   for (let n=0;n<scores.length; n++) {
       total = total + scores[n]
     }
-    
+
   let min = Number(Math.min(...scores));
   let max  = Number(Math.max(...scores));
   total = (total - (min + max));
