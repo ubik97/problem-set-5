@@ -25,6 +25,29 @@ function mario() {
   ////////////// DO NOT MODIFY
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
+  let hash = '#';
+  let space = ' ';
+  let lines = '';
+  while(true) {
+    height = Number(prompt("Enter An Integer Between 1 And 23"));
+    if(height >= 1 && height <= 23 && Number.isInteger(height)) {
+      for(let i=0; i<height; i++) {
+
+        for(let j=0; j<=(height-2-i);j++) {
+          lines = lines + space;
+        }
+
+        for(let k=0; k<=(1+i);k++) {
+          lines = lines + hash;
+        }
+
+        lines = lines + "<br>";
+      }
+      document.getElementById("mario-easy-output").innerHTML="<code>"+lines+"</code>";
+      break;
+    }
+
+  }
 
 
 
@@ -113,8 +136,14 @@ function credit() {
   //////////// DO NOT MODIFY
   let card; // DO NOT MODIFY
   //////////// DO NOT MODIFY
-
-  // WRITE YOUR EXERCISE 3 CODE HERE
+  while (true) {
+  card = prompt("Enter a 13, 15, or 16 digit integer.");
+  if (Number.isInteger(Number(card))) {
+    if (card.length == 13 || card.length == 15 || card.length == 16)  {
+          break;
+    }
+  }
+}
 
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
@@ -272,36 +301,29 @@ function gymnastics() {
   let total = 0; //// DO NOT MODIFY
   let scores = []; // DO NOT MODIFY
   /////////////////// DO NOT MODIFY
-  let input = prompt("Enter a number between 1 and 10");
-  let i = 0;
+  let input;
 
-  for (i=0;i<scores.length;i++) {
-    scores.push(input);
+  for (let i=0;i<6;i++) {
     input = prompt("Enter a number between 1 and 10");
+    input = +input;
     while (input<1 || input>10) {
-      input = prompt("I said, enter a number between 1 and 10");
+      score = prompt("Enter a number between 1 and 10");
+      score = +input;
     }
+    scores.push(input);
   }
-  for (n=0;n<scores.length; n++) {
-      if(0<Number(scores[i])< 10) {
-        scores[n] = Number(scores[n]);
-      }
+  for (let n=0;n<scores.length; n++) {
+      total = total + scores[n]
     }
-
-
-  let scr1 = scores[0];
-  let scr2 = scores[1];
-  let scr3 = scores[2];
-  let scr4 = scores[3];
-  let scr5 = scores[4];
-  let scr6 = scores[5];
+    
   let min = Number(Math.min(...scores));
   let max  = Number(Math.max(...scores));
-  total = ((scr1+scr2+scr3+scr4+scr5+scr6) - (min+max));
-  total = (total/4);
+  total = (total - (min + max));
+  let avg = (total/4);
+  avg = avg.toFixed(2);
 
   var p = document.getElementById("gymnastics-output");
-  p.innerHTML = total;
+  p.innerHTML = "Discarded: " + min + ", " + max + "<br>" + "Score: " + avg;
 
 
 
