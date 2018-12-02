@@ -273,33 +273,35 @@ function gymnastics() {
   let scores = []; // DO NOT MODIFY
   /////////////////// DO NOT MODIFY
   let input = prompt("Enter a number between 1 and 10");
+  let i = 0;
 
-  if (input<1 || input>10) {
-    while (input<1 || input>10) {
-      input = prompt("I said, enter a number between 1 and 10");
-    }
-  }
-
-  for (i=0;i<6;i++) {
+  for (i=0;i<scores.length;i++) {
     scores.push(input);
     input = prompt("Enter a number between 1 and 10");
     while (input<1 || input>10) {
       input = prompt("I said, enter a number between 1 and 10");
     }
   }
+  for (n=0;n<scores.length; n++) {
+      if(0<Number(scores[i])< 10) {
+        scores[n] = Number(scores[n]);
+      }
+    }
 
-  let min = Math.min(...scores);
-  let max  = Math.max(...scores);
 
-  total = function(scores) {
-  scores.reduce(function(a,b){return a + b}, 0);
-}
-  total = (total - max - min);
-  let avg = (total/4);
-  avg = parseInt(avg);
+  let scr1 = scores[0];
+  let scr2 = scores[1];
+  let scr3 = scores[2];
+  let scr4 = scores[3];
+  let scr5 = scores[4];
+  let scr6 = scores[5];
+  let min = Number(Math.min(...scores));
+  let max  = Number(Math.max(...scores));
+  total = ((scr1+scr2+scr3+scr4+scr5+scr6) - (min+max));
+  total = (total/4);
 
-  var p = document.getElementById("gymnastics-output")
-  p.innerHTML = avg;
+  var p = document.getElementById("gymnastics-output");
+  p.innerHTML = total;
 
 
 
@@ -345,26 +347,84 @@ function gymnastics() {
 
 function reportCard() {
 
-  let tscore = prompt("Enter all of your test scores. When you're finished, enter -1.")
-
   ///////////////////////// DO NOT MODIFY
   let testTotal = 0; ////// DO NOT MODIFY
   let quizTotal = 0; ////// DO NOT MODIFY
   let homeworkTotal = 0; // DO NOT MODIFY
   ///////////////////////// DO NOT MODIFY
-
-
-  /*
-   * NOTE: The 'testTotal', 'quizTotal', and 'homeworkTotal' variables
-   *       should be representative of the sum of the test scores, quiz
-   *       scores, and homework scores the user enters, respectively.
-   */
-
   ///////////////////// DO NOT MODIFY
   let tests = 0; ////// DO NOT MODIFY
   let quizzes = 0; //// DO NOT MODIFY
   let homeworks = 0; // DO NOT MODIFY
   ///////////////////// DO NOT MODIFY
+
+  let rcv = 1;
+  let tscores = 1;
+  let qscores = 1;
+  let hwscores = 1;
+  let a;
+  let b;
+  let c;
+
+  while (rcv > 0) {
+      while (tscores > 0) {
+        a = prompt("Enter your test grades. When you are finished, enter -1.");
+        a = Number(a);
+
+        if (0<=a && a<=100) {
+          testTotal = testTotal + a;
+          tests+=1;
+        } else if (a==-1) {
+          tscores--;
+        }
+      }
+
+      while (qscores > 0) {
+        b = prompt("Enter your quiz grades. When you are finished, enter -1.");
+        b = Number(b);
+
+        if (0<=b && b<=100) {
+          quizTotal = quizTotal + b;
+          quizzes++;
+        } else if (b==-1) {
+          qscores--;
+        }
+      }
+
+      while (hwscores > 0) {
+        c = prompt("Enter your homework grades. When you are finished, enter -1.");
+        c = Number(c);
+
+        if (0<=c && c<=100) {
+          homeworkTotal = homeworkTotal + c;
+          homeworks++;
+        } else if (c==-1) {
+          hwscores--;
+          rcv--;
+        }
+      }
+}
+
+let tavg;
+let qavg;
+let hwavg;
+let avg;
+
+tavg = ((testTotal/tests).toFixed(2));
+qavg = ((quizTotal/quizzes).toFixed(2));
+hwavg = ((homeworkTotal/homeworks).toFixed(2));
+avg = (((tavg*0.6) + (qavg*0.3) + (hwavg*0.1)).toFixed(2))
+
+var x = document.getElementById("report-card-output")
+x.innerHTML = "Tests: " + tavg + "</br>Quizzes: " + qavg+ "</br>Homework: " + hwavg + "</br>Grade: " + avg;
+
+
+
+
+
+
+
+
 
   /*
    * NOTE: The 'tests', 'quizzes', and 'homeworks' variables should be

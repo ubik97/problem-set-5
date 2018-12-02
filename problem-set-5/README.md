@@ -105,7 +105,7 @@ Write a function that prompts the user to enter six scores. From those six score
 
 Scores must be real numbers in the range [0.0, 10.0], and users should be continuously re-prompted until they comply with this restriction.
 
-As always, certain portions of the starter code are critical to the the feedback script. Please do not modify these sections. They are clearly marked.
+As always, certain portions of the starter code are critical to the feedback script. Please do not modify these sections. They are clearly marked.
 
 All output should be displayed on the page, not printed to the console.
 
