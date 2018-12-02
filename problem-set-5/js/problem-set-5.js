@@ -272,6 +272,37 @@ function gymnastics() {
   let total = 0; //// DO NOT MODIFY
   let scores = []; // DO NOT MODIFY
   /////////////////// DO NOT MODIFY
+  let input = prompt("Enter a number between 1 and 10");
+
+  if (input<1 || input>10) {
+    while (input<1 || input>10) {
+      input = prompt("I said, enter a number between 1 and 10");
+    }
+  }
+
+  for (i=0;i<6;i++) {
+    scores.push(input);
+    input = prompt("Enter a number between 1 and 10");
+    while (input<1 || input>10) {
+      input = prompt("I said, enter a number between 1 and 10");
+    }
+  }
+
+  let min = Math.min(...scores);
+  let max  = Math.max(...scores);
+
+  total = function(scores) {
+  scores.reduce(function(a,b){return a + b}, 0);
+}
+  total = (total - max - min);
+  let avg = (total/4);
+  avg = parseInt(avg);
+
+  var p = document.getElementById("gymnastics-output")
+  p.innerHTML = avg;
+
+
+
 
   /*
    * NOTE: The 'total' variable should be representative of the sum of all
