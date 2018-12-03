@@ -374,7 +374,7 @@ function reportCard() {
   let b;
   let c;
 
-  while (true) {
+
       while (true) {
         a = prompt("Enter your test grades. When you are finished, enter -1.");
         a = Number(a);
@@ -411,8 +411,7 @@ function reportCard() {
           on--;
         }
       }
-      break;
-}
+    
 
 let tavg;
 let qavg;
