@@ -173,27 +173,32 @@ function credit() {
   //////////// DO NOT MODIFY
   let clone;
   let a;
-
+  let int;
+  let string;
+  let n;
+  let multsum;
+  let normsum;
+  let p;
+  
   while (true) {
   card = prompt("Enter a 13, 15, or 16 digit integer.");
   if (Number.isInteger(Number(card))) {
-    if (card.length == 13 || card.length == 15 || card.length == 16)  {
       clone = card;
       break;
     }
   }
 }
 
-let mult = [];
-let arr = Array.from(String(clone), Number);
-console.log(arr.length);
+for (let i=(clone.length-2); i>0; i= i-2) {
+  a = (Number(clone[i])*2);
+  string = a.toString();
+for (n=0; n<string.length; n++) {
+  sum = sum + Number(string[n]);
+  }
+  
+  for (p=(clone.length-1);
 
-for (let i=(arr.length-2); i>0; i= i-2) {
-  if ((arr[i]*2))
-  a = arr[i]*2;
-  mult.push(a);
-}
-console.log(mult);
+
 
 
 
