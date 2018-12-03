@@ -374,8 +374,8 @@ function reportCard() {
   let b;
   let c;
 
-  while (on > 0) {
-      while (tscores > 0) {
+  while (true) {
+      while (true) {
         a = prompt("Enter your test grades. When you are finished, enter -1.");
         a = Number(a);
 
@@ -383,11 +383,11 @@ function reportCard() {
           testTotal = testTotal + a;
           tests+=1;
         } else if (a==-1) {
-          tscores--;
+          break;
         }
       }
 
-      while (qscores > 0) {
+      while (true) {
         b = prompt("Enter your quiz grades. When you are finished, enter -1.");
         b = Number(b);
 
@@ -395,11 +395,11 @@ function reportCard() {
           quizTotal = quizTotal + b;
           quizzes++;
         } else if (b==-1) {
-          qscores--;
+          break;
         }
       }
 
-      while (hwscores > 0) {
+      while (true) {
         c = prompt("Enter your homework grades. When you are finished, enter -1.");
         c = Number(c);
 
@@ -407,10 +407,11 @@ function reportCard() {
           homeworkTotal = homeworkTotal + c;
           homeworks++;
         } else if (c==-1) {
-          hwscores--;
+          break;
           on--;
         }
       }
+      break;
 }
 
 let tavg;
