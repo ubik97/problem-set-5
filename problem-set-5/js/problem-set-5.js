@@ -171,14 +171,30 @@ function credit() {
   //////////// DO NOT MODIFY
   let card; // DO NOT MODIFY
   //////////// DO NOT MODIFY
+  let clone;
+
   while (true) {
   card = prompt("Enter a 13, 15, or 16 digit integer.");
   if (Number.isInteger(Number(card))) {
     if (card.length == 13 || card.length == 15 || card.length == 16)  {
-          break;
+      clone = card;
+      break;
     }
   }
 }
+
+let mult = [];
+let arr = Array.from(String(clone), Number);
+console.log(arr.length);
+
+for (let i=(arr.length-1); i<0; i= i-2) {
+  let a = arr[i]*2;
+  mult.push(a);
+}
+console.log()
+
+
+
 
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
@@ -224,11 +240,14 @@ function guess() {
 
   if (num!=guess) {
     while (num!=guess) {
+      if (guess%1!=0) {
+        guess = prompt("That's not a number! Guess again");
+      }
       if (num>guess) {
         guess = prompt("Too low! Guess again");
       }
       if (num<guess) {
-        guess = prompt("Too high! Guess again")
+        guess = prompt("Too high! Guess again");
       }
       gtrack++;
     }
