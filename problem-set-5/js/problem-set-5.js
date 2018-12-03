@@ -25,6 +25,14 @@ function mario() {
   ////////////// DO NOT MODIFY
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
+  while (true) {
+  height = prompt("Enter an integer between 1 and 23");
+  height = Number(height);
+  if (Number.isInteger(height) && height<=23 && height>=1) {
+    break;
+  }
+}
+
 
 
 
@@ -283,10 +291,10 @@ function gymnastics() {
 
   for (let i=0;i<6;i++) {
     input = prompt("Enter a number between 1 and 10");
-    input = +input;
+    input = Number(input);
     while (input<1 || input>10) {
-      score = prompt("Enter a number between 1 and 10");
-      score = +input;
+      input = prompt("Enter a number between 1 and 10");
+      input = Number(input);
     }
     scores.push(input);
   }
@@ -358,7 +366,7 @@ function reportCard() {
   let homeworks = 0; // DO NOT MODIFY
   ///////////////////// DO NOT MODIFY
 
-  let rcv = 1;
+  let on = 1;
   let tscores = 1;
   let qscores = 1;
   let hwscores = 1;
@@ -366,7 +374,7 @@ function reportCard() {
   let b;
   let c;
 
-  while (rcv > 0) {
+  while (on > 0) {
       while (tscores > 0) {
         a = prompt("Enter your test grades. When you are finished, enter -1.");
         a = Number(a);
@@ -400,7 +408,7 @@ function reportCard() {
           homeworks++;
         } else if (c==-1) {
           hwscores--;
-          rcv--;
+          on--;
         }
       }
 }
