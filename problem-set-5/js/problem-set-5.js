@@ -25,6 +25,10 @@ function mario() {
   ////////////// DO NOT MODIFY
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
+
+  hashtags = "#";
+  linetxt = "";
+
   while (true) {
   height = prompt("Enter an integer between 1 and 23");
   height = Number(height);
@@ -32,6 +36,21 @@ function mario() {
     break;
   }
 }
+
+for (let i=height; i>=1; i--) {
+  for (let n = i-1; n>0;n--) {
+      linetxt = linetxt + "&nbsp";
+  }
+
+  for (let p= (height-i) + 2; p>0; p--) {
+    linetxt = linetxt + "#";
+  }
+  linetxt = linetxt + "<br>";
+}
+
+let u = document.getElementById("mario-easy-output");
+u.innerHTML = "<code>" + linetxt + "</code>";
+
 
 
 
@@ -70,7 +89,37 @@ function marioAgain() {
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 2 CODE HERE
+  hashtags = "#";
+  linetxt = "";
+
+  while (true) {
+  height = prompt("Enter an integer between 1 and 23");
+  height = Number(height);
+  if (Number.isInteger(height) && height<=23 && height>=1) {
+    break;
+  }
+}
+
+for (let i=height; i>=1; i--) {
+  for (let n = i-1; n>0;n--) {
+      linetxt = linetxt + "&nbsp";
+  }
+
+  for (let p= (height-i) + 2; p>0; p--) {
+    linetxt = linetxt + "#";
+  }
+
+  linetxt = linetxt + "&nbsp" + "&nbsp";
+
+  for (let p= (height-i) + 2; p>0; p--) {
+    linetxt = linetxt + "#";
+  }
+  linetxt = linetxt + "<br>";
+}
+
+let u = document.getElementById("mario-hard-output");
+u.innerHTML = "<code>" + linetxt + "</code>";
+
 
   //////////////////////////////// DO NOT MODIFY
   check('mario-again', height); // DO NOT MODIFY
