@@ -366,14 +366,9 @@ function reportCard() {
   let homeworks = 0; // DO NOT MODIFY
   ///////////////////// DO NOT MODIFY
 
-  let on = 1;
-  let tscores = 1;
-  let qscores = 1;
-  let hwscores = 1;
   let a;
   let b;
   let c;
-
 
       while (true) {
         a = prompt("Enter your test grades. When you are finished, enter -1.");
@@ -411,7 +406,7 @@ function reportCard() {
           on--;
         }
       }
-    
+
 
 let tavg;
 let qavg;
