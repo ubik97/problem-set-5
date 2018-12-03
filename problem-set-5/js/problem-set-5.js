@@ -172,6 +172,7 @@ function credit() {
   let card; // DO NOT MODIFY
   //////////// DO NOT MODIFY
   let clone;
+  let a;
 
   while (true) {
   card = prompt("Enter a 13, 15, or 16 digit integer.");
@@ -187,11 +188,14 @@ let mult = [];
 let arr = Array.from(String(clone), Number);
 console.log(arr.length);
 
-for (let i=(arr.length-1); i<0; i= i-2) {
-  let a = arr[i]*2;
+for (let i=(arr.length-2); i>0; i= i-2) {
+  if ((arr[i]*2))
+  a = arr[i]*2;
   mult.push(a);
 }
-console.log()
+console.log(mult);
+
+
 
 
 
@@ -366,6 +370,7 @@ function gymnastics() {
     }
     scores.push(input);
   }
+  console.log(scores);
   for (let n=0;n<scores.length; n++) {
       total = total + scores[n]
     }
