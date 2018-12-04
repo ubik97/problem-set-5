@@ -188,7 +188,7 @@ for (let i=(card.length-2); i>0; i= i-2) {
   let a = (Number(card[i])*2);
   string = a.toString();
   }
-  for (n=0; n<string.length; n++) {
+  for (n=0; n<=string.length; n++) {
     multsum = multsum + Number(string[n]);
     }
 
@@ -198,9 +198,23 @@ for (let i=(card.length-2); i>0; i= i-2) {
 
   sum = multsum + normsum;
 
-  if (sum%10!=0) {
+  if (sum%10!==0) {
     document.getElementById("credit-output").innerHTML = "<img src = ./images/invalid.png>"
   }
+
+  if ((card.length==15) && ((card[0]==3) && (card[1]==4 || card[1]==7))) {
+      document.getElementById("credit-output").innerHTML = "<img src = ./images/amex.png>"
+  }
+
+  if ((card.length==16) && ((card[0]==5) && ((card[1]==1) || (card[1]==2) || (card[1]==3) || (card[1]==4) || (card[1]==5)))) {
+    document.getElementById("credit-output").innerHTML = "<img src = ./images/mastercard.png>"
+  }
+
+  if (((card.length==16) || (card.length==13)) && (card[0]==4)) {
+    document.getElementById("credit-output").innerHTML = "<img src = ./images/visa.png>"
+  }
+
+  card = Number(card);
 
 
 
