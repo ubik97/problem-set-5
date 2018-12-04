@@ -171,32 +171,37 @@ function credit() {
   //////////// DO NOT MODIFY
   let card; // DO NOT MODIFY
   //////////// DO NOT MODIFY
-  let clone;
-  let a;
-  let int;
+
+  let multsum = 0;
+  let normsum = 0;
+  let sum = 0;
   let string;
-  let n;
-  let multsum;
-  let normsum;
-  let p;
-  
   while (true) {
   card = prompt("Enter a 13, 15, or 16 digit integer.");
   if (Number.isInteger(Number(card))) {
-      clone = card;
       break;
     }
   }
-}
 
-for (let i=(clone.length-2); i>0; i= i-2) {
-  a = (Number(clone[i])*2);
+
+for (let i=(card.length-2); i>0; i= i-2) {
+  let a = (Number(card[i])*2);
   string = a.toString();
-for (n=0; n<string.length; n++) {
-  sum = sum + Number(string[n]);
   }
-  
-  for (p=(clone.length-1);
+  for (n=0; n<string.length; n++) {
+    multsum = multsum + Number(string[n]);
+    }
+
+  for (let p=(card.length-1); p>=0; p= p-2) {
+    normsum = normsum + Number(card[p]);
+  }
+
+  sum = multsum + normsum;
+
+  if (sum%10!=0) {
+    document.getElementById("credit-output").innerHTML = "<img src = ./images/invalid.png>"
+  }
+
 
 
 

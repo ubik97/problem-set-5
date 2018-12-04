@@ -72,6 +72,10 @@ American Express uses 15-digit numbers, starting with 34 or 37. Mastercard uses 
 4012888888881881 should verify as Visa.
 Credit card numbers must be integers. Users should be continuously re-prompted until they comply with this restriction.
 
+if (sum%10=0) {
+  if (card
+
+}
 As always, certain portions of the starter code are critical to the the feedback script. Please do not modify these sections. They are clearly marked.
 
 All output should be displayed on the page, not printed to the console.
