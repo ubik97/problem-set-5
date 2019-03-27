@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Perfect Pitch Trainer</title>
+    <script type="text/javascript" src="pitchtest.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  </head>
+
+<body>
+
+
+
+<h1><p id="pageTitle1">Pitch Practice</<p></h1>
+<h3><p id="subtitle">An online tool for achieving perfect pitch!</p></h3>
+
+<button id="start" onclick="gameplay()" disabled>Start</button>
+<button id="finish">Finish</button>
+<button id="sfYes" onclick="includeSharps(true)">Yes</button>
+<button id="sfNo" onclick="includeSharps(false)">No</button>
+<div id="sf"><p>Sharps/Flats?</p></div>
+<div id="outputDiv">
+  <div >
+    <p id="feedbackBox"></p>
+  </div>
+</div>
+
+
+<br/><br/><br/>
+<!-- keyboard -->
+<center>
+<div id="fullKeyboard">
+
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  <div align="center" class="keyboard">
+  <button onclick= "notePlayed(261.63)" id="key" class="natural" id="Cnat">C</button>
+  <button onclick="notePlayed(293.67)" id="key" class="natural" id="Dnat">D</button>
+  <button onclick="notePlayed(329.63)" id="key" class="natural" id="Enat">E</button>
+  <button onclick="notePlayed(349.23)" id="key" class="natural" id="Fnat">F</button>
+  <button onclick="notePlayed(392)" id="key" class="natural" id="Gnat">G</button>
+  <button onclick="notePlayed(440)" id="key" class="natural" id="Anat">A</button>
+  <button onclick="notePlayed(493.88)" id="key" class="natural" id="Bnat">B</button>
+</div>
+
+<div align="center" class="keyboardSharps">
+  <div id="cSharpDiv"><button onclick="notePlayed(277.18)" id="key" class="sharp" id="Csharp">C#</button></div>
+  <div id="dSharpDiv"><button onclick="notePlayed(311.13)" id="key" class="sharp" id="Dsharp">D#</button></div>
+  <div id="fSharpDiv"><button onclick="notePlayed(369.99)" id="key" class="sharp" id="Esharp">F#</button></div>
+  <div id="gSharpDiv"><button onclick="notePlayed(415.3)" id="key" class="sharp" id="Fsharp">G#</button></div>
+  <div id="aSharpDiv"><button onclick="notePlayed(466.16)" id="key" class="sharp" id="Fsharp">A#</button></div>
+</div>
+</div>
+</center>
+
+
+
+
+</body>
+
+
+
+</html>
